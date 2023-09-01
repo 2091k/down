@@ -1,7 +1,3 @@
-https://raw.githubusercontent.com/a624587332/netly/main/bedrock_server
-
-
-
 #!/bin/bash
 
 if [ ! -f "agent" ]; then
