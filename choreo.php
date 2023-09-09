@@ -4,8 +4,8 @@
 $token = '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QNJJMACcAG';
 
 // 仓库信息
-$repositoryOwner = '2091k';
-$repositoryName = '0905';
+$repositoryOwner = 'github用户名';
+$repositoryName = '项目名称';
 $filePath = 'Dockerfile';
 
 // 设置时区为 "Asia/Shanghai"，即北京时间
