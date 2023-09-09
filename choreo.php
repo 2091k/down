@@ -5,7 +5,7 @@ $token = 'github_pat_11BBQZU3Q0Y2DXfHcBlMny_cmbjx2091kmWISC8CWlqcQkUY2cgQHFccrTm
 
 // 仓库信息
 $repositoryOwner = '2091k';
-$repositoryName = '0905';
+$repositoryName = 'cmbjx001';
 $filePath = 'Dockerfile';
 
 // 设置时区为 "Asia/Shanghai"，即北京时间
