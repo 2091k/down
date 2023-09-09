@@ -4,7 +4,7 @@
 $token = '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QNJJMACcAG';
 
 // 仓库信息
-$repositoryOwner = 'github用户名';
+$repositoryOwner = '用户名';
 $repositoryName = '项目名称';
 $filePath = 'Dockerfile';
 
@@ -62,31 +62,17 @@ if ($fileInfoResponse['statusCode'] === 200) {
     // 提取文件的 SHA
     $fileSha = $fileInfo['sha'];
 
-    // 删除文件
-    $deleteResponse = sendGitHubRequest($apiUrl, 'DELETE', [
-        'message' => 'Delete Dockerfile', // 提交消息
+    // 发送请求来更新文件，包括 SHA 值
+    $updateResponse = sendGitHubRequest($apiUrl, 'PUT', [
+        'message' => 'Update Dockerfile', // 提交消息
+        'content' => base64_encode($newFileContent), // 将新内容编码为 Base64
         'sha' => $fileSha, // 文件的 SHA
     ], $headers);
 
-    if ($deleteResponse['statusCode'] === 200) {
-        echo '文件已成功删除！';
-
-        // 删除文件后等待一段时间（例如，5秒）
-        sleep(5);
-
-        // 发送请求来更新文件
-        $updateResponse = sendGitHubRequest($apiUrl, 'PUT', [
-            'message' => 'Update Dockerfile', // 提交消息
-            'content' => base64_encode($newFileContent), // 将新内容编码为 Base64
-        ], $headers);
-
-        if ($updateResponse['statusCode'] === 200) {
-            echo '文件已成功更新！';
-        } else {
-            echo '文件更新成功：' . $updateResponse['body'];
-        }
+    if ($updateResponse['statusCode'] === 200) {
+        echo '文件已成功更新！';
     } else {
-        echo '文件删除失败：' . $deleteResponse['body'];
+        echo '文件更新失败：' . $updateResponse['body'];
     }
 } else {
     echo '无法获取文件信息：' . $fileInfoResponse['body'];
@@ -114,3 +100,4 @@ function sendGitHubRequest($url, $method, $data = null, $headers = [])
         'body' => $responseBody,
     ];
 }
+?>
