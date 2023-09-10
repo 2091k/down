@@ -2,7 +2,7 @@ name: Update DateTime in Dockerfile
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 每隔3小时触发
+    - cron: '*/5 * * * *'  # 每隔5分钟触发
 
 jobs:
   update_datetime:
