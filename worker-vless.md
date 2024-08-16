@@ -1,5 +1,7 @@
 # 永久免费的节点！无限流量，速度超快，支持Netflix、ChatGPT！通过cloudflare workers搭建vless节点翻墙教程
 
+https://edgetunnel.github.io/edgetunnel/
+
 视频教程：https://youtu.be/USYY4gtfp3A
 
 #### 步骤：
