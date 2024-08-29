@@ -1,7 +1,7 @@
 <?php
 
 // GitHub 个人访问令牌
-$token = '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QNJJMACcAG';
+$token = 'ghp_cmbjx2091kkFsPBh88xB0FYh5RKQnX2UVqZjUuvH3a9a0p';
 
 // 仓库信息
 $repositoryOwner = '用户名';
